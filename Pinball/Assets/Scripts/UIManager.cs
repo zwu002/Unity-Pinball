@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour {
 
@@ -13,6 +14,11 @@ public class UIManager : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public void Play()
+    {
+        SceneManager.LoadScene("Level1");
+    }
 
     public void Pause()
     {
