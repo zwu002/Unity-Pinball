@@ -6,7 +6,7 @@ public class Ball : MonoBehaviour {
     public float randomV;
     public float randomH;
 
-    int score = 0;
+    int ballScore = 0;
 
     Rigidbody2D rb;
     bool isPlay;
@@ -22,5 +22,15 @@ public class Ball : MonoBehaviour {
 	void Update () {
         float time = Time.deltaTime;
 
+    }
+
+    void OnCollisionEnter2D (Collision2D col)
+    {
+        if (col.gameObject.tag == "PinNormal") {
+            ballScore += 5;
+        }
+        else if (col.gameObject.tag == "PinBouncy") {
+            ballScore += 20;
+        }
     }
 }
