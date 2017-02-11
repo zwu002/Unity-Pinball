@@ -5,6 +5,7 @@ public class Collect : MonoBehaviour {
 
     public GameObject uiManager;
     public int catcherScore;
+    public GameObject otherBall;
 
 	void Start () {
         catcherScore = 0;
@@ -18,8 +19,9 @@ public class Collect : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Ball"))
         {
+            otherBall = other.gameObject;
+            catcherScore = otherBall.GetComponent<Ball>().ballScore;
             uiManager.GetComponent<UIManager>().scoreUpdate();
-            catcherScore += 1;
             other.gameObject.SetActive(false);
         }
     }

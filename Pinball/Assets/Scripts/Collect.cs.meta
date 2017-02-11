@@ -1,10 +1,12 @@
 fileFormatVersion: 2
 guid: c78dbe366c7d78040b12cf163cf8da18
-timeCreated: 1486818975
+timeCreated: 1486820264
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - uiManager: {instanceID: 0}
+  - otherBall: {fileID: 183796, guid: c04ffc431834f4541ac124e0c10b5b0d, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -9,7 +9,7 @@ public class Ball : MonoBehaviour {
     float currentSpeed;
     public float maxSpeed = 5;
 
-    public int ballScore = 100;
+    public int ballScore = 0;
 
     Rigidbody2D rb;
     bool isPlay;

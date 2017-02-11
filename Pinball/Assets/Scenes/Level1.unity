@@ -3487,6 +3487,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11458372, guid: c04ffc431834f4541ac124e0c10b5b0d, type: 2}
+      propertyPath: ballScore
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04ffc431834f4541ac124e0c10b5b0d, type: 2}
   m_IsPrefabParent: 0
@@ -3913,6 +3917,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 387644670}
   uiScore: 0
+  catcher: {fileID: 2108027043}
 --- !u!4 &1685445904
 Transform:
   m_ObjectHideFlags: 0
@@ -4438,6 +4443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiManager: {fileID: 1685445902}
   catcherScore: 0
+  otherBall: {fileID: 183796, guid: c04ffc431834f4541ac124e0c10b5b0d, type: 2}
 --- !u!61 &2108027048
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4463,6 +4469,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ec40adfffbf4a94b821e37958308482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  catcherSpeed: 0
+  catcherSpeed: 10
   minPos: -2.2
   maxPos: 2.2

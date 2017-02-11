@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour {
     public Text scoreText;
     public int uiScore;
 
+    public GameObject catcher;
 
     void Start () {
       currentScene = SceneManager.GetActiveScene();
@@ -23,7 +24,7 @@ public class UIManager : MonoBehaviour {
 
     public void scoreUpdate()
     {
-        uiScore += 1;
+        uiScore += catcher.GetComponent<Collect>().catcherScore;
     }
 
     public void Play()
