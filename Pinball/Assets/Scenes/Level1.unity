@@ -944,7 +944,7 @@ GameObject:
   - 222: {fileID: 387644671}
   - 114: {fileID: 387644670}
   m_Layer: 5
-  m_Name: Score
+  m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -964,8 +964,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 105, y: -38}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 153, y: -48}
+  m_SizeDelta: {x: 257, y: 49}
   m_Pivot: {x: 0.49999997, y: 0.50000036}
 --- !u!114 &387644670
 MonoBehaviour:
@@ -988,10 +988,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
-    m_FontStyle: 0
+    m_FontSize: 24
+    m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -2666,15 +2666,15 @@ RectTransform:
   m_GameObject: {fileID: 1066367551}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.8211331, y: 2.821132, z: 2.821132}
   m_Children:
   - {fileID: 1185155418}
   m_Father: {fileID: 697555925}
   m_RootOrder: 3
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -240, y: -284}
-  m_SizeDelta: {x: 76.8, y: 33.2}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 76.8, y: 33.200012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1066367553
 MonoBehaviour:
@@ -3789,15 +3789,15 @@ RectTransform:
   m_GameObject: {fileID: 1638095884}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.8211331, y: 2.821132, z: 2.821132}
   m_Children:
   - {fileID: 751111581}
   m_Father: {fileID: 697555925}
   m_RootOrder: 2
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -240, y: -209}
-  m_SizeDelta: {x: 76.8, y: 33.2}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 134}
+  m_SizeDelta: {x: 76.8, y: 33.200012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1638095886
 MonoBehaviour:
@@ -3894,7 +3894,7 @@ GameObject:
   - 4: {fileID: 1685445904}
   - 114: {fileID: 1685445903}
   m_Layer: 0
-  m_Name: UIManager
+  m_Name: uiHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3911,6 +3911,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f40dda6a78133a24fa274c5705b838b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 387644670}
+  uiScore: 0
 --- !u!4 &1685445904
 Transform:
   m_ObjectHideFlags: 0
@@ -3949,15 +3951,15 @@ RectTransform:
   m_GameObject: {fileID: 1796528103}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.8211331, y: 2.821132, z: 2.821132}
   m_Children:
   - {fileID: 542536188}
   m_Father: {fileID: 697555925}
   m_RootOrder: 4
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -240, y: -359}
-  m_SizeDelta: {x: 76.8, y: 33.2}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -136}
+  m_SizeDelta: {x: 76.8, y: 33.200012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1796528105
 MonoBehaviour:
@@ -4070,14 +4072,14 @@ RectTransform:
   m_GameObject: {fileID: 1814182754}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4802408, y: 1.4802408, z: 1.4802408}
   m_Children:
   - {fileID: 645209872}
   m_Father: {fileID: 697555925}
   m_RootOrder: 1
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -64.6, y: -36.4}
+  m_AnchoredPosition: {x: -71, y: -43}
   m_SizeDelta: {x: 76.8, y: 33.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1814182756
@@ -4359,6 +4361,7 @@ GameObject:
   - 114: {fileID: 2108027046}
   - 61: {fileID: 2108027048}
   - 114: {fileID: 2108027047}
+  - 114: {fileID: 2108027049}
   m_Layer: 0
   m_Name: CatcherI
   m_TagString: Untagged
@@ -4430,9 +4433,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2108027043}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9295bc61bc246214b9eb64dee4631319, type: 3}
+  m_Script: {fileID: 11500000, guid: c78dbe366c7d78040b12cf163cf8da18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiManager: {fileID: 1685445902}
+  catcherScore: 0
 --- !u!61 &2108027048
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4447,3 +4452,17 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1.5, y: 0.3}
+--- !u!114 &2108027049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2108027043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ec40adfffbf4a94b821e37958308482, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  catcherSpeed: 0
+  minPos: -2.2
+  maxPos: 2.2

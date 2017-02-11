@@ -13,7 +13,7 @@ GameObject:
   - 50: {fileID: 5095036}
   - 114: {fileID: 11458372}
   m_Layer: 0
-  m_Name: Ball
+  m_Name: BallSprite
   m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,6 +75,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomV: 0
   randomH: 0
+  maxSpeed: 5
+  ballScore: 0
 --- !u!212 &21208322
 SpriteRenderer:
   m_ObjectHideFlags: 1

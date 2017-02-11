@@ -1,19 +1,30 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class UIManager : MonoBehaviour {
 
     Scene currentScene;
 
+    public Text scoreText;
+    public int uiScore;
+
+
     void Start () {
       currentScene = SceneManager.GetActiveScene();
+      uiScore = 0;
     }
 	
-	// Update is called once per frame
 	void Update () {
-	
+        scoreText.text = "Score: " + uiScore;
 	}
+
+    public void scoreUpdate()
+    {
+        uiScore += 1;
+    }
 
     public void Play()
     {
