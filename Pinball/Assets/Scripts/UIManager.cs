@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour {
 
     void Start () {
       gameOver = false;
+        Time.timeScale = 1;
       currentScene = SceneManager.GetActiveScene();
       uiScore = 0;
     }

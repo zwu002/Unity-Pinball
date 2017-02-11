@@ -9,16 +9,69 @@ public class CatcherMove : MonoBehaviour {
 
     Vector3 position;
 
+    bool currentPlatformAndroid = false;
+
+    Rigidbody2D rb;
+
+    void Awake()
+    {
+
+        rb = GetComponent<Rigidbody2D>();
+
+#if UNITY_ANDROID
+        currentPlatformAndroid = true;
+#else
+        currentPlatformAndroid = false;
+#endif
+    }
+
 	void Start () {
       position = transform.position;
+
+        if (currentPlatformAndroid == true)
+        {
+            Debug.Log("Android");
+        }
+        else
+        {
+            Debug.Log("Windows");
+        }
 	}
 	
 	void Update () {
 
-        position.x += Input.GetAxis("Horizontal") * catcherSpeed * Time.deltaTime;
+        if (currentPlatformAndroid == true)
+        {
+            // android specific code
+        }
+        else
+        {
+            position.x += Input.GetAxis("Horizontal") * catcherSpeed * Time.deltaTime;
+        
+            position.x = Mathf.Clamp(position.x, minPos, maxPos);
 
+            transform.position = position;
+
+        }
+
+        position = transform.position;
         position.x = Mathf.Clamp(position.x, minPos, maxPos);
-
         transform.position = position;
+    }
+
+    // controller functions for Android
+    public void MoveLeft()
+    {
+        rb.velocity = new Vector2(-catcherSpeed, 0);
+    }
+
+    public void MoveRight()
+    {
+        rb.velocity = new Vector2(catcherSpeed, 0);
+    }
+
+    public void SetVelocityZero()
+    {
+        rb.velocity = Vector2.zero;
     }
 }
