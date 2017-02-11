@@ -43,6 +43,7 @@ public class CatcherMove : MonoBehaviour {
         if (currentPlatformAndroid == true)
         {
             // android specific code
+            AccelerometerMove();
         }
         else
         {
@@ -58,6 +59,27 @@ public class CatcherMove : MonoBehaviour {
         position.x = Mathf.Clamp(position.x, minPos, maxPos);
         transform.position = position;
     }
+
+    // Accelerometer move function for Android
+    public void AccelerometerMove()
+    {
+        float x = Input.acceleration.x;
+
+        if (x < -0.1f)
+        {
+            MoveLeft();
+        }
+        else if (x > 0.1f)
+        {
+            MoveRight();
+        }
+        else
+        {
+            SetVelocityZero();
+        }
+
+    }
+
 
     // controller functions for Android
     public void MoveLeft()
