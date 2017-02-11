@@ -6,6 +6,9 @@ public class Ball : MonoBehaviour {
     public float randomV;
     public float randomH;
 
+    float currentSpeed;
+    public float maxSpeed = 5;
+
     int ballScore = 0;
 
     Rigidbody2D rb;

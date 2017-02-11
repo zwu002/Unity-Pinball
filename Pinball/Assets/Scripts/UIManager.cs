@@ -4,11 +4,11 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour {
 
-
+    Scene currentScene;
 
     void Start () {
-	
-	}
+      currentScene = SceneManager.GetActiveScene();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -30,5 +30,20 @@ public class UIManager : MonoBehaviour {
         {
             Time.timeScale = 1;
         }
+    }
+
+    public void Replay ()
+    {
+        SceneManager.LoadScene(currentScene.name);
+    }
+    
+    public void Menu ()
+    {
+        SceneManager.LoadScene("StartMenu");
+    }
+
+    public void Exit ()
+    {
+        Application.Quit();
     }
 }
