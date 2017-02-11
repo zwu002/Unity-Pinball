@@ -7,7 +7,7 @@ public class Ball : MonoBehaviour {
     public float randomH;
 
     float currentSpeed;
-    public float maxSpeed = 5;
+    public float maxSpeed = 10000f;
 
     public int ballScore = 0;
 
@@ -25,6 +25,16 @@ public class Ball : MonoBehaviour {
 	void Update () {
         float time = Time.deltaTime;
 
+        if (rb.velocity.magnitude > maxSpeed)
+        {
+            rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxSpeed);
+        }
+
+    }
+
+    void OnGUI()
+    {
+        GUI.Label(new Rect(20, 20, 200, 200), "rigidbody velocity: " + rb.velocity);
     }
 
     void OnCollisionEnter2D (Collision2D col)

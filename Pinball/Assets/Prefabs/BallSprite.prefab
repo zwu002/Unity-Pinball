@@ -75,7 +75,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomV: 0
   randomH: 0
-  maxSpeed: 5
+  maxSpeed: 10
   ballScore: 0
 --- !u!212 &21208322
 SpriteRenderer:
