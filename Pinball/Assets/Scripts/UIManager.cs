@@ -9,11 +9,14 @@ public class UIManager : MonoBehaviour {
     Scene currentScene;
 
     public Text scoreText;
+    public Button[] buttons;
     public int uiScore;
 
     public GameObject catcher;
+    bool gameOver;
 
     void Start () {
+      gameOver = false;
       currentScene = SceneManager.GetActiveScene();
       uiScore = 0;
     }
@@ -37,10 +40,24 @@ public class UIManager : MonoBehaviour {
         if (Time.timeScale == 1)
         {
             Time.timeScale = 0;
+
+            // kill this when fixing UI
+            foreach (Button button in buttons)
+            {
+                button.gameObject.SetActive(true);
+            }
+
         }
         else if (Time.timeScale == 0)
         {
             Time.timeScale = 1;
+
+            // kill this when fixing UI
+            foreach (Button button in buttons)
+            {
+                button.gameObject.SetActive(false);
+            }
+
         }
     }
 
@@ -57,5 +74,14 @@ public class UIManager : MonoBehaviour {
     public void Exit ()
     {
         Application.Quit();
+    }
+
+    public void gameOverActivate()
+    {
+        gameOver = true;
+        foreach (Button button in buttons)
+        {
+            button.gameObject.SetActive(true);
+        }
     }
 }

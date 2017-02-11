@@ -1957,12 +1957,12 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 480, y: 800}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -2657,7 +2657,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1066367552
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3788,7 +3788,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1638095885
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3920,6 +3920,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 387644670}
+  buttons:
+  - {fileID: 1638095886}
+  - {fileID: 1066367553}
+  - {fileID: 1796528105}
   uiScore: 0
   catcher: {fileID: 2108027043}
 --- !u!4 &1685445904
@@ -3951,7 +3955,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1796528104
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4081,14 +4085,14 @@ RectTransform:
   m_GameObject: {fileID: 1814182754}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4802408, y: 1.4802408, z: 1.4802408}
+  m_LocalScale: {x: 1.0881947, y: 1.0881947, z: 1.0881947}
   m_Children:
   - {fileID: 645209872}
   m_Father: {fileID: 697555925}
   m_RootOrder: 1
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -71, y: -43}
+  m_AnchoredPosition: {x: -62.3, y: -38.2}
   m_SizeDelta: {x: 76.8, y: 33.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1814182756
