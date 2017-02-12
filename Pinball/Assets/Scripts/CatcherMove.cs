@@ -43,7 +43,10 @@ public class CatcherMove : MonoBehaviour {
         if (currentPlatformAndroid == true)
         {
             // android specific code
+            //currently deactivated for convenience
+            /*
             AccelerometerMove();
+            */
         }
         else
         {
@@ -65,11 +68,11 @@ public class CatcherMove : MonoBehaviour {
     {
         float x = Input.acceleration.x;
 
-        if (x < -0.1f)
+        if (x < -0.02f)
         {
             MoveLeft();
         }
-        else if (x > 0.1f)
+        else if (x > 0.02f)
         {
             MoveRight();
         }
