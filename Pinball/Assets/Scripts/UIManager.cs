@@ -12,7 +12,7 @@ public class UIManager : MonoBehaviour {
     public Button[] buttons;
     public int uiScore;
 
-    public GameObject catcher;
+    public GameObject collector;
     bool gameOver;
 
     void Start () {
@@ -28,7 +28,7 @@ public class UIManager : MonoBehaviour {
 
     public void scoreUpdate()
     {
-        uiScore += catcher.GetComponent<Collect>().catcherScore;
+        uiScore += collector.GetComponent<Collect>().catcherScore;
     }
 
     public void Play()

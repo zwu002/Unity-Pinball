@@ -7,4 +7,4 @@ PhysicsMaterial2D:
   m_PrefabInternal: {fileID: 0}
   m_Name: Sticky
   friction: 1
-  bounciness: 0
+  bounciness: 0.2
