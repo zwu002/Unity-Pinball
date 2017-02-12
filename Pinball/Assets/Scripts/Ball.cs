@@ -61,7 +61,7 @@ public class Ball : MonoBehaviour {
         else if (ballScore > 160 && ballScore <= 250)
         {
             colorChangeIndex = (ballScoref - 160f) / 250f;
-            sr.color = Color.Lerp(new Vector4(0, 0.65f, 0.15f, 1), new Vector4(1f, 0.65f, 0.15f, 1), colorChangeIndex);
+            sr.color = Color.Lerp(new Vector4(0, 0.65f, 0.15f, 1), new Vector4(1, 0.65f, 0.15f, 1), colorChangeIndex);
         }
 
         else if (ballScore > 250 && ballScore <= 350)
