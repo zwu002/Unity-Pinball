@@ -46,21 +46,33 @@ public class Ball : MonoBehaviour {
             rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxSpeed);
         }
 
-        if (ballScore > 0 && ballScore <= 100) 
+        if (ballScore > 0 && ballScore <= 80) 
         {
-            colorChangeIndex = ballScoref / 100f;
-            sr.color = Color.Lerp(new Vector4 (0, 0, 1, 1), new Vector4(0, 1, 0, 1), colorChangeIndex);
+            colorChangeIndex = ballScoref / 80f;
+            sr.color = Color.Lerp(new Vector4 (0, 0, 1, 1), new Vector4(0, 0.5f, 0.5f, 1), colorChangeIndex);
         }
 
-        else if (ballScore > 100 && ballScore <= 200)
+        else if (ballScore > 80 && ballScore <= 160)
         {
-            colorChangeIndex = (ballScoref - 100f) / 100f;
-            sr.color = Color.Lerp(new Vector4(0, 1, 0, 1), new Vector4(1, 0, 0, 1), colorChangeIndex);
+            colorChangeIndex = (ballScoref - 80f) / 160f;
+            sr.color = Color.Lerp(new Vector4(0, 0.5f, 0.5f, 1), new Vector4(0, 0.65f, 0.15f, 1), colorChangeIndex);
         }
 
-        else if (ballScore > 200)
+        else if (ballScore > 160 && ballScore <= 250)
         {
-            sr.color = Color.Lerp(Color.white, Color.red, Mathf.PingPong(Time.time, 1));
+            colorChangeIndex = (ballScoref - 160f) / 250f;
+            sr.color = Color.Lerp(new Vector4(0, 0.65f, 0.15f, 1), new Vector4(1, 0.65f, 0.15f, 1), colorChangeIndex);
+        }
+
+        else if (ballScore > 250 && ballScore <= 350)
+        {
+            colorChangeIndex = (ballScoref - 250f) / 350f;
+            sr.color = Color.Lerp(new Vector4(1, 0.65f, 0.15f, 1), new Vector4(1, 0.15f, 0.15f, 1), colorChangeIndex);
+        }
+
+        else if (ballScore > 350)
+        {
+            sr.color = Color.Lerp(Color.white, new Vector4(1, 0.15f, 0.15f, 1), Mathf.PingPong(Time.time * 2, 1));
         }
     }
 
