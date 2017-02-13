@@ -13,6 +13,7 @@ public class Ball : MonoBehaviour {
 
     public float previousTime;
     public int hitNumber;
+    public bool playCombo;
 
     //this variables are for calculating color changes as the score goes up
     float ballScoref;
@@ -29,6 +30,7 @@ public class Ball : MonoBehaviour {
 	void Awake () {
 
         hitNumber = 0;
+        playCombo = false;
 
         ballScoref = 0;
         colorChangeIndex = 0;
@@ -47,7 +49,6 @@ public class Ball : MonoBehaviour {
 	
 	
 	void Update () {
-
 
         if (rb.velocity.magnitude > maxSpeed)
         {
@@ -98,18 +99,24 @@ public class Ball : MonoBehaviour {
             if (hitNumber == 0)
             {
                 hitNumber++;
-                previousTime = Time.deltaTime;
+                previousTime = Time.time;
             }
             else if (hitNumber > 0)
             {
                 hitNumber++;
             }
 
-            if (hitNumber >= 5 && (Time.deltaTime - previousTime) < 2f)
+            if (hitNumber >= 5 && (Time.time - previousTime) < 2f)
             {
-                celebrate.Play();
+                playCombo = true;
                 hitNumber = 0;
             }
+            else if (hitNumber >= 5 && (Time.time - previousTime) >= 2f)
+            {
+                playCombo = false;
+                hitNumber = 0;
+            }
+
 
         }
         else if (col.gameObject.tag == "Bottom")

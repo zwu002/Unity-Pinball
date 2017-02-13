@@ -771,6 +771,10 @@ Transform:
   - {fileID: 1960470142}
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!1 &358815876 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 170142, guid: f6a18986f729cce4283f71f12b73ce7c, type: 2}
+  m_PrefabInternal: {fileID: 519304494}
 --- !u!1 &387644668
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,6 +891,10 @@ Prefab:
       propertyPath: m_Name
       value: ButtonBouncy (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 11433588, guid: 685023503f31c3146887fda6050d52c0, type: 2}
+      propertyPath: combo
+      value: 
+      objectReference: {fileID: 358815876}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 685023503f31c3146887fda6050d52c0, type: 2}
   m_IsPrefabParent: 0
@@ -917,6 +925,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!1001 &519304494
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 490402, guid: f6a18986f729cce4283f71f12b73ce7c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.07378441
+      objectReference: {fileID: 0}
+    - target: {fileID: 490402, guid: f6a18986f729cce4283f71f12b73ce7c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4.4868674
+      objectReference: {fileID: 0}
+    - target: {fileID: 490402, guid: f6a18986f729cce4283f71f12b73ce7c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 490402, guid: f6a18986f729cce4283f71f12b73ce7c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 490402, guid: f6a18986f729cce4283f71f12b73ce7c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 490402, guid: f6a18986f729cce4283f71f12b73ce7c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 490402, guid: f6a18986f729cce4283f71f12b73ce7c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 490402, guid: f6a18986f729cce4283f71f12b73ce7c, type: 2}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 170142, guid: f6a18986f729cce4283f71f12b73ce7c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f6a18986f729cce4283f71f12b73ce7c, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &542536187
 GameObject:
   m_ObjectHideFlags: 0
@@ -1124,6 +1178,10 @@ Prefab:
       propertyPath: m_Name
       value: ButtonBouncy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 11433588, guid: 685023503f31c3146887fda6050d52c0, type: 2}
+      propertyPath: combo
+      value: 
+      objectReference: {fileID: 358815876}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 685023503f31c3146887fda6050d52c0, type: 2}
   m_IsPrefabParent: 0
@@ -2278,6 +2336,10 @@ Prefab:
       propertyPath: m_Name
       value: ButtonBouncy (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 11433588, guid: 685023503f31c3146887fda6050d52c0, type: 2}
+      propertyPath: combo
+      value: 
+      objectReference: {fileID: 358815876}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 685023503f31c3146887fda6050d52c0, type: 2}
   m_IsPrefabParent: 0
@@ -3413,6 +3475,10 @@ Prefab:
       propertyPath: m_Name
       value: ButtonBouncy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 11433588, guid: 685023503f31c3146887fda6050d52c0, type: 2}
+      propertyPath: combo
+      value: 
+      objectReference: {fileID: 358815876}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 685023503f31c3146887fda6050d52c0, type: 2}
   m_IsPrefabParent: 0
@@ -3889,6 +3955,10 @@ Prefab:
       propertyPath: m_Name
       value: ButtonBouncy (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 11433588, guid: 685023503f31c3146887fda6050d52c0, type: 2}
+      propertyPath: combo
+      value: 
+      objectReference: {fileID: 358815876}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 685023503f31c3146887fda6050d52c0, type: 2}
   m_IsPrefabParent: 0
@@ -4886,6 +4956,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 11433588, guid: 685023503f31c3146887fda6050d52c0, type: 2}
+      propertyPath: combo
+      value: 
+      objectReference: {fileID: 358815876}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 685023503f31c3146887fda6050d52c0, type: 2}
   m_IsPrefabParent: 0

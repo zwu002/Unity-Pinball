@@ -4,8 +4,12 @@ using System.Collections;
 public class PlayAnimation : MonoBehaviour {
 
     public GameObject buttonBouncy;
+    public GameObject combo;
     public bool hitBall;
     int timer;
+    int hitNumber;
+    public float previousTime;
+    bool comboActive;
 
     Animator buttonAnimator;
 
@@ -13,13 +17,20 @@ public class PlayAnimation : MonoBehaviour {
 
     void Start () {
         timer = 0;
+        previousTime = 0;
         buttonAnimator = GetComponent<Animator>();
         rb = gameObject.GetComponent<Rigidbody2D>();
+        comboActive = false;
     }
 	
 
 	void Update () {
 
+        if ((comboActive == true) && (Time.time - previousTime) >= 2f)
+        {
+            combo.SetActive(false);
+            comboActive = false;
+        }
 
         if (hitBall == true)
         {
@@ -41,6 +52,16 @@ public class PlayAnimation : MonoBehaviour {
         if (col.gameObject.tag == "Ball")
         {
             hitBall = true;
+
+            hitNumber = col.gameObject.GetComponent<Ball>().hitNumber;
+            if (col.gameObject.GetComponent<Ball>().playCombo == true && comboActive == false)
+            {
+                col.gameObject.GetComponent<Ball>().celebrate.Play();
+                combo.SetActive(true);
+                col.gameObject.GetComponent<Ball>().playCombo = false;
+                previousTime = Time.time;
+                comboActive = true;
+            }
         }
     }
 }
