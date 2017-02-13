@@ -207,7 +207,7 @@ MonoBehaviour:
   minPos: -2.6
   maxPos: 2.6
   height: 5
-  delayTimer: 5
+  delayTimer: 2
 --- !u!4 &53296271
 Transform:
   m_ObjectHideFlags: 0
@@ -476,9 +476,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc4afc5bd77d02d4f9bafb450ae53fdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  catcherSpeed: 3
-  minPos: -2.2
-  maxPos: 2.2
+  catcherSpeed: 10
+  minPos: -2.5
+  maxPos: 2.5
 --- !u!61 &73695850
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2223,7 +2223,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 798442651}
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 3
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -2255,7 +2255,7 @@ PolygonCollider2D:
       - {x: 0.04904437, y: -0.078088745}
       - {x: 0.09349048, y: -0.025235634}
       - {x: 0.08934317, y: 0.04489805}
-      - {x: 0.073031716, y: 0.09748838}
+      - {x: 0.08281856, y: 0.1146154}
 --- !u!1 &818165993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2694,7 +2694,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 896165264}
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 3
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -2717,7 +2717,7 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Points:
     m_Paths:
-    - - {x: -0.07448363, y: 0.09280018}
+    - - {x: -0.07077149, y: 0.11878567}
       - {x: -0.08257049, y: 0.032530326}
       - {x: -0.08008057, y: -0.047469597}
       - {x: -0.01514107, y: -0.08759068}

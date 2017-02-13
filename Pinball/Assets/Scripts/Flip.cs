@@ -28,9 +28,31 @@ public class Flip : MonoBehaviour {
 
     void Update ()
     {
-        if (currentPlatformAndroid == true)
+        if (currentPlatformAndroid == false)
         {
             TouchFlip();
+        }
+        else
+        {
+            if (Input.GetButtonDown("Fire1"))
+            {
+                FlipLeft();
+            }
+
+            if (Input.GetButtonDown("Fire2"))
+            {
+                FlipRight();
+            }
+
+            if (Input.GetButton("Fire1"))
+            {
+                HoldingLeft();
+            }
+
+            if (Input.GetButton("Fire2"))
+            {
+                HoldingRight();
+            }
         }
     }
 
@@ -50,12 +72,7 @@ public class Flip : MonoBehaviour {
             {
                 FlipRight();
             }
-
-            else
-            {
-                ReleaseLeft();
-                ReleaseRight();            }
-        }
+      }
     }
 
 
@@ -74,13 +91,13 @@ public class Flip : MonoBehaviour {
         AddTorque(rbRightFlipper, -torqueForce);
     }
 
-    public void ReleaseLeft()
+    public void HoldingLeft()
     {
-        AddTorque(rbLeftFlipper, -torqueForce);
+        AddTorque(rbLeftFlipper, torqueForce);
     }
 
-    public void ReleaseRight()
+    public void HoldingRight()
     {
-        AddTorque(rbRightFlipper, torqueForce);
+        AddTorque(rbRightFlipper, -torqueForce);
     }
 }
