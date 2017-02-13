@@ -7,7 +7,7 @@ public class Ball : MonoBehaviour {
     public float randomH;
 
     float currentSpeed;
-    public float maxSpeed = 10000f;
+    public float maxSpeed;
 
     public int ballScore = 0;
 
@@ -54,19 +54,19 @@ public class Ball : MonoBehaviour {
 
         else if (ballScore > 80 && ballScore <= 160)
         {
-            colorChangeIndex = (ballScoref - 80f) / 160f;
+            colorChangeIndex = (ballScoref - 80f) / 80f;
             sr.color = Color.Lerp(new Vector4(0, 0.5f, 0.5f, 1), new Vector4(0, 0.65f, 0.15f, 1), colorChangeIndex);
         }
 
         else if (ballScore > 160 && ballScore <= 250)
         {
-            colorChangeIndex = (ballScoref - 160f) / 250f;
+            colorChangeIndex = (ballScoref - 160f) / 90f;
             sr.color = Color.Lerp(new Vector4(0, 0.65f, 0.15f, 1), new Vector4(1f, 0.65f, 0.15f, 1), colorChangeIndex);
         }
 
         else if (ballScore > 250 && ballScore <= 350)
         {
-            colorChangeIndex = (ballScoref - 250f) / 350f;
+            colorChangeIndex = (ballScoref - 250f) / 100f;
             sr.color = Color.Lerp(new Vector4(1, 0.65f, 0.15f, 1), new Vector4(1, 0.15f, 0.15f, 1), colorChangeIndex);
         }
 
