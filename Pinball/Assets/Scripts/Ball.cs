@@ -11,6 +11,9 @@ public class Ball : MonoBehaviour {
 
     public int ballScore = 0;
 
+    public float previousTime;
+    public int hitNumber;
+
     //this variables are for calculating color changes as the score goes up
     float ballScoref;
     float colorChangeIndex;
@@ -19,10 +22,13 @@ public class Ball : MonoBehaviour {
     SpriteRenderer sr;
 
     public AudioSource hitSound;
+    public AudioSource celebrate;
 
     bool isPlay;
 
 	void Awake () {
+
+        hitNumber = 0;
 
         ballScoref = 0;
         colorChangeIndex = 0;
@@ -41,7 +47,7 @@ public class Ball : MonoBehaviour {
 	
 	
 	void Update () {
-        float time = Time.deltaTime;
+
 
         if (rb.velocity.magnitude > maxSpeed)
         {
@@ -88,6 +94,23 @@ public class Ball : MonoBehaviour {
             ballScore += 20;
             ballScoref = ballScore - 0.1f;
             hitSound.Play();
+
+            if (hitNumber == 0)
+            {
+                hitNumber++;
+                previousTime = Time.deltaTime;
+            }
+            else if (hitNumber > 0)
+            {
+                hitNumber++;
+            }
+
+            if (hitNumber >= 5 && (Time.deltaTime - previousTime) < 2f)
+            {
+                celebrate.Play();
+                hitNumber = 0;
+            }
+
         }
         else if (col.gameObject.tag == "Bottom")
         {
