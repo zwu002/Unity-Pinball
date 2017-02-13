@@ -12,11 +12,52 @@ public class Flip : MonoBehaviour {
     Rigidbody2D rbLeftFlipper;
     Rigidbody2D rbRightFlipper;
 
+    bool currentPlatformAndroid = false;
+
     void Start()
     {
         rbLeftFlipper = leftFlipper.GetComponent<Rigidbody2D>();
         rbRightFlipper = rightFlipper.GetComponent<Rigidbody2D>();
+
+#if UNITY_ANDROID
+        currentPlatformAndroid = true;
+#else
+        currentPlatformAndroid = false;
+#endif
     }
+
+    void Update ()
+    {
+        if (currentPlatformAndroid == true)
+        {
+            TouchFlip();
+        }
+    }
+
+    void TouchFlip()
+    {
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            float middle = Screen.width / 2;
+
+            if (touch.position.x < middle && touch.phase == TouchPhase.Began)
+            {
+                FlipLeft();
+            }
+
+            else if (touch.position.x > middle && touch.phase == TouchPhase.Began)
+            {
+                FlipRight();
+            }
+
+            else
+            {
+                ReleaseLeft();
+                ReleaseRight();            }
+        }
+    }
+
 
     void AddTorque(Rigidbody2D rigid, float force)
     {
