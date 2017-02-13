@@ -10,7 +10,9 @@ public class Collect : MonoBehaviour {
     public AudioSource soundLowValue;
     public AudioSource soundHighValue;
 
-	void Start () {
+    public Vector4 ballColor;
+
+    void Start () {
         catcherScore = 0;
 	}
 	
@@ -24,7 +26,7 @@ public class Collect : MonoBehaviour {
         {
             otherBall = other.gameObject;
             catcherScore = otherBall.GetComponent<Ball>().ballScore;
-            
+            ballColor = otherBall.GetComponent<SpriteRenderer>().color;
 
             if (catcherScore < 280)
             {

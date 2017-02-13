@@ -300,10 +300,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomV: 0
   randomH: 0
-  maxSpeed: 10
+  maxSpeed: 8
   ballScore: 0
   previousTime: 0
   hitNumber: 0
+  playCombo: 0
   hitSound: {fileID: 8276844}
   celebrate: {fileID: 8278560}
 --- !u!212 &21208322

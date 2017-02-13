@@ -388,7 +388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   catcherSpeedSlow: 3
-  catcherSpeedFast: 8
+  catcherSpeedFast: 10
   minPos: -2.2
   maxPos: 2.2
 --- !u!61 &73695850
@@ -480,6 +480,7 @@ MonoBehaviour:
   otherBall: {fileID: 183796, guid: c04ffc431834f4541ac124e0c10b5b0d, type: 2}
   soundLowValue: {fileID: 73695856}
   soundHighValue: {fileID: 73695855}
+  ballColor: {x: 0, y: 0, z: 0, w: 0}
 --- !u!82 &73695855
 AudioSource:
   m_ObjectHideFlags: 0
@@ -750,8 +751,8 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 141}
-  m_SizeDelta: {x: 101, y: 33}
+  m_AnchoredPosition: {x: 0, y: 150}
+  m_SizeDelta: {x: 199, y: 65}
   m_Pivot: {x: 0.50000006, y: 0.50000036}
 --- !u!114 &214848373
 MonoBehaviour:
@@ -774,11 +775,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
+    m_FontSize: 48
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
-    m_MaxSize: 40
+    m_MaxSize: 48
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -4555,7 +4556,9 @@ MonoBehaviour:
   - {fileID: 1066367553}
   - {fileID: 1796528105}
   uiScore: 0
+  previousTime: 0
   collector: {fileID: 73695848}
+  ballColor: {x: 0, y: 0, z: 0, w: 0}
 --- !u!4 &1685445904
 Transform:
   m_ObjectHideFlags: 0

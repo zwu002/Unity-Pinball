@@ -13,10 +13,16 @@ public class UIManager : MonoBehaviour {
     public Button[] buttons;
     public int uiScore;
 
+    public float previousTime;
+    bool catchTextActive;
+
     public GameObject collector;
     bool gameOver;
 
+    public Vector4 ballColor; 
+
     void Start () {
+        previousTime = 0;
       gameOver = false;
         Time.timeScale = 1;
       currentScene = SceneManager.GetActiveScene();
@@ -25,12 +31,28 @@ public class UIManager : MonoBehaviour {
 	
 	void Update () {
         scoreText.text = "Score: " + uiScore;
+
+        if ((Time.time - previousTime) < 1f && catchTextActive == true)
+        {
+            float colorChangeIndex = (Time.time - previousTime);
+            catchText.GetComponent<Text>().color = Color.Lerp(new Vector4(0, 0, 0, 0), ballColor, colorChangeIndex);
+        }
+        else if ((Time.time - previousTime) >= 2f && catchTextActive == true)
+        {
+            catchText.SetActive(false);
+            catchTextActive = false;
+        }
+
     }
 
     public void scoreUpdate()
     {
         uiScore += collector.GetComponent<Collect>().catcherScore;
         catchText.GetComponent<Text>().text = "+ " + collector.GetComponent<Collect>().catcherScore;
+        catchText.SetActive(true);
+        catchTextActive = true;
+        previousTime = Time.time;
+        ballColor = collector.GetComponent<Collect>().ballColor;
     }
 
     public void Play()
