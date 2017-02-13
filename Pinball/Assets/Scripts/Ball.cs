@@ -18,6 +18,8 @@ public class Ball : MonoBehaviour {
     Rigidbody2D rb;
     SpriteRenderer sr;
 
+    public AudioSource hitSound;
+
     bool isPlay;
 
 	void Awake () {
@@ -46,31 +48,31 @@ public class Ball : MonoBehaviour {
             rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxSpeed);
         }
 
-        if (ballScore > 0 && ballScore <= 80) 
+        if (ballScore > 0 && ballScore <= 70) 
         {
-            colorChangeIndex = ballScoref / 80f;
+            colorChangeIndex = ballScoref / 70f;
             sr.color = Color.Lerp(new Vector4 (0, 0, 1, 1), new Vector4(0, 0.5f, 0.5f, 1), colorChangeIndex);
         }
 
-        else if (ballScore > 80 && ballScore <= 160)
+        else if (ballScore > 70 && ballScore <= 140)
         {
-            colorChangeIndex = (ballScoref - 80f) / 80f;
+            colorChangeIndex = (ballScoref - 70f) / 70f;
             sr.color = Color.Lerp(new Vector4(0, 0.5f, 0.5f, 1), new Vector4(0, 0.65f, 0.15f, 1), colorChangeIndex);
         }
 
-        else if (ballScore > 160 && ballScore <= 250)
+        else if (ballScore > 140 && ballScore <= 220)
         {
-            colorChangeIndex = (ballScoref - 160f) / 90f;
+            colorChangeIndex = (ballScoref - 140f) / 80f;
             sr.color = Color.Lerp(new Vector4(0, 0.65f, 0.15f, 1), new Vector4(1f, 0.65f, 0.15f, 1), colorChangeIndex);
         }
 
-        else if (ballScore > 250 && ballScore <= 350)
+        else if (ballScore > 220 && ballScore <= 300)
         {
-            colorChangeIndex = (ballScoref - 250f) / 100f;
+            colorChangeIndex = (ballScoref - 220f) / 80f;
             sr.color = Color.Lerp(new Vector4(1, 0.65f, 0.15f, 1), new Vector4(1, 0.15f, 0.15f, 1), colorChangeIndex);
         }
 
-        else if (ballScore > 350)
+        else if (ballScore > 300)
         {
             sr.color = Color.Lerp(Color.white, new Vector4(1, 0.15f, 0.15f, 1), Mathf.PingPong(Time.time * 2, 1));
         }
@@ -85,6 +87,11 @@ public class Ball : MonoBehaviour {
         else if (col.gameObject.tag == "PinBouncy") {
             ballScore += 20;
             ballScoref = ballScore - 0.1f;
+            hitSound.Play();
+        }
+        else if (col.gameObject.tag == "Bottom")
+        {
+            gameObject.SetActive(false);
         }
     }
 }

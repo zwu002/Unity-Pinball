@@ -7,6 +7,9 @@ public class Collect : MonoBehaviour {
     public int catcherScore;
     public GameObject otherBall;
 
+    public AudioSource soundLowValue;
+    public AudioSource soundHighValue;
+
 	void Start () {
         catcherScore = 0;
 	}
@@ -21,6 +24,16 @@ public class Collect : MonoBehaviour {
         {
             otherBall = other.gameObject;
             catcherScore = otherBall.GetComponent<Ball>().ballScore;
+
+            if (catcherScore < 280)
+            {
+                soundLowValue.Play();
+            }
+            else if (catcherScore >= 280)
+            {
+                soundHighValue.Play();
+            }
+
             uiManager.GetComponent<UIManager>().scoreUpdate();
             other.gameObject.SetActive(false);
         }

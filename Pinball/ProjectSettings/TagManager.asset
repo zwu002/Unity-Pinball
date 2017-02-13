@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Ball
   - New Tag
+  - PinNormal
+  - PinBouncy
+  - Bottom
   layers:
   - Default
   - TransparentFX

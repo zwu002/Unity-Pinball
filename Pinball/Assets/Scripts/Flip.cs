@@ -14,6 +14,8 @@ public class Flip : MonoBehaviour {
 
     bool currentPlatformAndroid = false;
 
+    public AudioSource flipSound;
+
     void Start()
     {
         rbLeftFlipper = leftFlipper.GetComponent<Rigidbody2D>();
@@ -37,11 +39,13 @@ public class Flip : MonoBehaviour {
             if (Input.GetButtonDown("Fire1"))
             {
                 FlipLeft();
+                flipSound.Play();
             }
 
             if (Input.GetButtonDown("Fire2"))
             {
                 FlipRight();
+                flipSound.Play();
             }
 
             if (Input.GetButton("Fire1"))

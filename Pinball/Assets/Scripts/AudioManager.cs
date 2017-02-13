@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class script : MonoBehaviour {
+public class AudioManager : MonoBehaviour {
 
-	// Use this for initialization
+    public AudioSource flip;
+    public AudioSource spawn;
+
 	void Start () {
 	
 	}
