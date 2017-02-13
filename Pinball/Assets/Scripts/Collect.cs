@@ -24,6 +24,7 @@ public class Collect : MonoBehaviour {
         {
             otherBall = other.gameObject;
             catcherScore = otherBall.GetComponent<Ball>().ballScore;
+            
 
             if (catcherScore < 280)
             {

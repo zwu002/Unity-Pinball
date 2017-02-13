@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour {
     Scene currentScene;
 
     public Text scoreText;
+    public GameObject catchText;
     public Button[] buttons;
     public int uiScore;
 
@@ -24,11 +25,12 @@ public class UIManager : MonoBehaviour {
 	
 	void Update () {
         scoreText.text = "Score: " + uiScore;
-	}
+    }
 
     public void scoreUpdate()
     {
         uiScore += collector.GetComponent<Collect>().catcherScore;
+        catchText.GetComponent<Text>().text = "+ " + collector.GetComponent<Collect>().catcherScore;
     }
 
     public void Play()
