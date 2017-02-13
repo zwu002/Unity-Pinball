@@ -3,7 +3,8 @@ using System.Collections;
 
 public class CatcherMove : MonoBehaviour {
 
-    public float catcherSpeed;
+    public float catcherSpeedSlow = 3.0f;
+    public float catcherSpeedFast = 10.0f;
     public float minPos = -2.2f;
     public float maxPos = 2.2f;
 
@@ -46,7 +47,7 @@ public class CatcherMove : MonoBehaviour {
         }
         else
         {
-            position.x += Input.GetAxis("Horizontal") * catcherSpeed * Time.deltaTime;
+            position.x += Input.GetAxis("Horizontal") * catcherSpeedFast * Time.deltaTime;
         
             position.x = Mathf.Clamp(position.x, minPos, maxPos);
 
@@ -64,13 +65,23 @@ public class CatcherMove : MonoBehaviour {
     {
         float x = Input.acceleration.x;
 
-        if (x < -0.05f)
+        if (x < -0.02f && x > -0.15f)
         {
-            MoveLeft();
+            MoveLeftSlow();
         }
-        else if (x > 0.05f)
+
+        else if (x <= -0.15f)
         {
-            MoveRight();
+            MoveLeftFast();
+        }
+        else if (x > 0.02f && x < 0.15f)
+        {
+            MoveRightSlow();
+        }
+
+        else if (x >= 0.15f)
+        {
+            MoveRightFast();
         }
         else
         {
@@ -81,14 +92,24 @@ public class CatcherMove : MonoBehaviour {
 
 
     // controller functions for Android
-    public void MoveLeft()
+    public void MoveLeftSlow()
     {
-        rb.velocity = new Vector2(-catcherSpeed, 0);
+        rb.velocity = new Vector2(-catcherSpeedSlow, 0);
     }
 
-    public void MoveRight()
+    public void MoveRightSlow()
     {
-        rb.velocity = new Vector2(catcherSpeed, 0);
+        rb.velocity = new Vector2(catcherSpeedSlow, 0);
+    }
+
+    public void MoveLeftFast()
+    {
+        rb.velocity = new Vector2(-catcherSpeedFast, 0);
+    }
+
+    public void MoveRightFast()
+    {
+        rb.velocity = new Vector2(catcherSpeedFast, 0);
     }
 
     public void SetVelocityZero()
