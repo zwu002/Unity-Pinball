@@ -4553,6 +4553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 387644670}
   timeLeftText: {fileID: 1970341215}
+  highScoreText: {fileID: 1894006045}
   catchText: {fileID: 214848371}
   buttons:
   - {fileID: 1638095886}
@@ -4561,7 +4562,7 @@ MonoBehaviour:
   uiScore: 0
   previousTime: 0
   collector: {fileID: 73695848}
-  timeLeft: 0
+  timeLeft: 30
   ballColor: {x: 0, y: 0, z: 0, w: 0}
 --- !u!4 &1685445904
 Transform:

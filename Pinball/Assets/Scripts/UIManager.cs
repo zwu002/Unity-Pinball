@@ -10,6 +10,8 @@ public class UIManager : MonoBehaviour {
 
     public Text scoreText;
     public Text timeLeftText;
+    public Text highScoreText;
+
     public GameObject catchText;
     public Button[] buttons;
     public int uiScore;
@@ -25,12 +27,12 @@ public class UIManager : MonoBehaviour {
 
     void Start () {
       previousTime = 0;
-        timeLeft = 60;
       gameOver = false;
       Time.timeScale = 1;
       currentScene = SceneManager.GetActiveScene();
       uiScore = 0;
         InvokeRepeating("TimeCount", 1.0f, 1.0f);
+        highScoreText.text = "Highscore: " + PlayerPrefs.GetInt("HighScore");
     }
 	
 	void Update () {
@@ -50,12 +52,7 @@ public class UIManager : MonoBehaviour {
 
         if (timeLeft == 0)
         {
-            gameOver = true;
-            Time.timeScale = 0;
-            foreach (Button button in buttons)
-            {
-                button.gameObject.SetActive(true);
-            }
+            gameOverActivate();
         }
     }
 
@@ -125,9 +122,18 @@ public class UIManager : MonoBehaviour {
     public void gameOverActivate()
     {
         gameOver = true;
+
         foreach (Button button in buttons)
         {
             button.gameObject.SetActive(true);
         }
+
+        if (PlayerPrefs.GetInt("HighScore") < uiScore)
+        {
+            PlayerPrefs.SetInt("HighScore", uiScore);
+        }
+
+        Time.timeScale = 0;
+
     }
 }
