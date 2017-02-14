@@ -48,6 +48,15 @@ public class UIManager : MonoBehaviour {
             catchTextActive = false;
         }
 
+        if (timeLeft == 0)
+        {
+            gameOver = true;
+            Time.timeScale = 0;
+            foreach (Button button in buttons)
+            {
+                button.gameObject.SetActive(true);
+            }
+        }
     }
 
     public void scoreUpdate()
@@ -108,7 +117,10 @@ public class UIManager : MonoBehaviour {
 
     public void TimeCount()
     {
-        timeLeft--;
+        if (gameOver == false)
+        {
+            timeLeft--;
+        }
     }
     public void gameOverActivate()
     {
