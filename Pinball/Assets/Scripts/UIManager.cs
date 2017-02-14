@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour {
     Scene currentScene;
 
     public Text scoreText;
+    public Text timeLeftText;
     public GameObject catchText;
     public Button[] buttons;
     public int uiScore;
@@ -17,20 +18,24 @@ public class UIManager : MonoBehaviour {
     bool catchTextActive;
 
     public GameObject collector;
+    public int timeLeft;
     bool gameOver;
 
     public Vector4 ballColor; 
 
     void Start () {
-        previousTime = 0;
+      previousTime = 0;
+        timeLeft = 60;
       gameOver = false;
-        Time.timeScale = 1;
+      Time.timeScale = 1;
       currentScene = SceneManager.GetActiveScene();
       uiScore = 0;
+        InvokeRepeating("TimeCount", 1.0f, 1.0f);
     }
 	
 	void Update () {
         scoreText.text = "Score: " + uiScore;
+        timeLeftText.text = "Time: " + timeLeft;
 
         if ((Time.time - previousTime) < 1f && catchTextActive == true)
         {
@@ -101,6 +106,10 @@ public class UIManager : MonoBehaviour {
         Application.Quit();
     }
 
+    public void TimeCount()
+    {
+        timeLeft--;
+    }
     public void gameOverActivate()
     {
         gameOver = true;
