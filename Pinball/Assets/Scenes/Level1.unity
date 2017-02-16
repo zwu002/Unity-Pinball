@@ -1434,7 +1434,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 663545257}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071067}
-  m_LocalPosition: {x: 3.2900152, y: -0.3992001, z: 0}
+  m_LocalPosition: {x: 3.2900152, y: -0.16, z: 0}
   m_LocalScale: {x: 7.1375012, y: -1, z: 1}
   m_Children: []
   m_Father: {fileID: 908024018}
@@ -2155,7 +2155,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 781713090}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071067}
-  m_LocalPosition: {x: -2.549985, y: -0.3992001, z: 0}
+  m_LocalPosition: {x: -2.549985, y: -0.11, z: 0}
   m_LocalScale: {x: 7.1375012, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 908024018}
@@ -2445,8 +2445,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 798442651}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.6, y: 1.37, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.09134714, w: 0.99581915}
+  m_LocalPosition: {x: 2.59, y: 1.58, z: 0}
   m_LocalScale: {x: 1.7821623, y: 1.7821621, z: 1.7821621}
   m_Children: []
   m_Father: {fileID: 1959850882}
@@ -2495,7 +2495,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 2.60303, y: -1.1171731}
+  m_ConnectedAnchor: {x: 2.59303, y: -0.90717304}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -2503,7 +2503,7 @@ HingeJoint2D:
   m_UseLimits: 1
   m_AngleLimits:
     m_LowerAngle: 0
-    m_UpperAngle: 50
+    m_UpperAngle: 30
 --- !u!50 &798442655
 Rigidbody2D:
   serializedVersion: 2
@@ -2916,8 +2916,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 896165264}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.62, y: 1.37, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.088369004, w: 0.99608785}
+  m_LocalPosition: {x: -2.61, y: 1.629, z: 0}
   m_LocalScale: {x: 1.7821623, y: 1.7821621, z: 1.7821621}
   m_Children: []
   m_Father: {fileID: 1959850882}
@@ -2966,14 +2966,14 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -2.6169698, y: -1.1171731}
+  m_ConnectedAnchor: {x: -2.6069698, y: -0.85817313}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -50
+    m_LowerAngle: -30
     m_UpperAngle: 0
 --- !u!50 &896165268
 Rigidbody2D:
