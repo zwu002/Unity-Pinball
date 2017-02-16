@@ -109,7 +109,6 @@ public class Ball : MonoBehaviour {
             if (hitNumber >= 5 && (Time.time - previousTime) < 2f)
             {
                 playCombo = true;
-                ballScore += 200;
                 hitNumber = 0;
             }
             else if (hitNumber >= 5 && (Time.time - previousTime) >= 2f)

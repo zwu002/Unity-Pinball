@@ -3,10 +3,12 @@ using System.Collections;
 
 public class CatcherMove : MonoBehaviour {
 
-    public float catcherSpeedSlow = 3.0f;
-    public float catcherSpeedFast = 10.0f;
+    public float catcherSpeedIndex = 500.0f;
     public float minPos = -2.2f;
     public float maxPos = 2.2f;
+    public float catcherSpeedAndroid;
+    public float catcherSpeedPc = 10.0f;
+    public float catcherSpeedAndroidFast;
 
     Vector3 position;
 
@@ -47,7 +49,7 @@ public class CatcherMove : MonoBehaviour {
         }
         else
         {
-            position.x += Input.GetAxis("Horizontal") * catcherSpeedFast * Time.deltaTime;
+            position.x += Input.GetAxis("Horizontal") * catcherSpeedPc * Time.deltaTime;
         
             position.x = Mathf.Clamp(position.x, minPos, maxPos);
 
@@ -63,23 +65,22 @@ public class CatcherMove : MonoBehaviour {
     // Accelerometer move function for Android
     public void AccelerometerMove()
     {
-        float x = Input.acceleration.x;
+        catcherSpeedAndroid = Input.acceleration.x;
+        catcherSpeedAndroidFast = catcherSpeedAndroid * 1.3f;
 
-        if (x < -0.02f && x > -0.15f)
+        if (catcherSpeedAndroid < -0.02f && catcherSpeedAndroid > -0.1f)
         {
-            MoveLeftSlow();
+            MoveLeft();
         }
-
-        else if (x <= -0.15f)
+        else if (catcherSpeedAndroid > 0.02f && catcherSpeedAndroid < 0.1f)
+        {
+            MoveRight();
+        }
+        else if (catcherSpeedAndroid <= -0.1f)
         {
             MoveLeftFast();
         }
-        else if (x > 0.02f && x < 0.15f)
-        {
-            MoveRightSlow();
-        }
-
-        else if (x >= 0.15f)
+        else if (catcherSpeedAndroid >= 0.1f)
         {
             MoveRightFast();
         }
@@ -92,24 +93,24 @@ public class CatcherMove : MonoBehaviour {
 
 
     // controller functions for Android
-    public void MoveLeftSlow()
+    public void MoveLeft()
     {
-        rb.velocity = new Vector2(-catcherSpeedSlow, 0);
+        rb.velocity = new Vector2(catcherSpeedAndroid * catcherSpeedIndex, 0);
     }
 
-    public void MoveRightSlow()
+    public void MoveRight()
     {
-        rb.velocity = new Vector2(catcherSpeedSlow, 0);
+        rb.velocity = new Vector2(catcherSpeedAndroid * catcherSpeedIndex, 0);
     }
 
     public void MoveLeftFast()
     {
-        rb.velocity = new Vector2(-catcherSpeedFast, 0);
+        rb.velocity = new Vector2(catcherSpeedAndroidFast * catcherSpeedIndex, 0);
     }
 
     public void MoveRightFast()
     {
-        rb.velocity = new Vector2(catcherSpeedFast, 0);
+        rb.velocity = new Vector2(catcherSpeedAndroidFast * catcherSpeedIndex, 0);
     }
 
     public void SetVelocityZero()

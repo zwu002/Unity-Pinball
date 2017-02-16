@@ -57,6 +57,7 @@ public class PlayAnimation : MonoBehaviour {
             if (col.gameObject.GetComponent<Ball>().playCombo == true && comboActive == false)
             {
                 col.gameObject.GetComponent<Ball>().celebrate.Play();
+                col.gameObject.GetComponent<Ball>().ballScore += 200;
                 combo.SetActive(true);
                 col.gameObject.GetComponent<Ball>().playCombo = false;
                 previousTime = Time.time;

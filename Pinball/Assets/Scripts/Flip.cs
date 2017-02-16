@@ -30,7 +30,7 @@ public class Flip : MonoBehaviour {
 
     void Update ()
     {
-        if (currentPlatformAndroid == false)
+        if (currentPlatformAndroid == true)
         {
             TouchFlip();
         }
