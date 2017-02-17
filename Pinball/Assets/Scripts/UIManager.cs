@@ -11,26 +11,31 @@ public class UIManager : MonoBehaviour {
     public Text scoreText;
     public Text timeLeftText;
     public Text highScoreText;
+    public Text gameOverScoreText;
+    public Text gameOverComboText;
 
     public GameObject catchText;
     public Button[] buttons;
     public int uiScore;
+    public int combos;
 
     public float previousTime;
     bool catchTextActive;
 
     public GameObject collector;
+    public GameObject bumpers;
     public int timeLeft;
     bool gameOver;
 
     public Vector4 ballColor; 
 
     void Start () {
-      previousTime = 0;
-      gameOver = false;
-      Time.timeScale = 1;
-      currentScene = SceneManager.GetActiveScene();
-      uiScore = 0;
+        previousTime = 0;
+        gameOver = false;
+        Time.timeScale = 1;
+        currentScene = SceneManager.GetActiveScene();
+        uiScore = 0;
+        combos = 0;
         InvokeRepeating("TimeCount", 1.0f, 1.0f);
         highScoreText.text = "Highscore: " + PlayerPrefs.GetInt("HighScore");
     }
@@ -64,6 +69,11 @@ public class UIManager : MonoBehaviour {
         catchTextActive = true;
         previousTime = Time.time;
         ballColor = collector.GetComponent<Collect>().ballColor;
+    }
+
+    public void comboUpdate()
+    {
+        combos++;
     }
 
     public void Play()
@@ -122,6 +132,11 @@ public class UIManager : MonoBehaviour {
     public void gameOverActivate()
     {
         gameOver = true;
+
+        gameOverScoreText.text = "YOUR SCORE" + "\r\n" + uiScore;
+        gameOverComboText.text = "YOUR COMBO" + "\r\n" + combos;
+        gameOverScoreText.gameObject.SetActive(true);
+        gameOverComboText.gameObject.SetActive(true);
 
         foreach (Button button in buttons)
         {

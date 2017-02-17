@@ -10,6 +10,7 @@ public class PlayAnimation : MonoBehaviour {
     int hitNumber;
     public float previousTime;
     bool comboActive;
+    public GameObject uiManager;
 
     Animator buttonAnimator;
 
@@ -53,16 +54,16 @@ public class PlayAnimation : MonoBehaviour {
         {
             hitBall = true;
 
-            hitNumber = col.gameObject.GetComponent<Ball>().hitNumber;
-            if (col.gameObject.GetComponent<Ball>().playCombo == true && comboActive == false)
+            hitNumber = col.gameObject.GetComponent<Ball>().hitNumber;                              // Get hitNumber from script 'Ball'
+            if (col.gameObject.GetComponent<Ball>().playCombo == true && comboActive == false)      // 'Playcombo' detection
             {
-                col.gameObject.GetComponent<Ball>().celebrate.Play();
-                col.gameObject.GetComponent<Ball>().ballScore += 200;
-                combo.SetActive(true);
-                col.gameObject.GetComponent<Ball>().playCombo = false;
-                previousTime = Time.time;
-                comboActive = true;
-            }
+                col.gameObject.GetComponent<Ball>().celebrate.Play();                               // Play celebration sound
+                col.gameObject.GetComponent<Ball>().ballScore += 200;                               // Attach bonus points
+                combo.SetActive(true);                                                              // Play celebration sprite
+                col.gameObject.GetComponent<Ball>().playCombo = false;                              // Refresh combo status
+                previousTime = Time.time;                                                           // Bug fixing: avoid continuous combos
+                comboActive = true;                                                                 // Bug fixing: avoid continuous combos
+                uiManager.GetComponent<UIManager>().comboUpdate();            }
         }
     }
 }
