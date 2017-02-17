@@ -28,11 +28,11 @@ public class Collect : MonoBehaviour {
             catcherScore = otherBall.GetComponent<Ball>().ballScore;
             ballColor = otherBall.GetComponent<SpriteRenderer>().color;
 
-            if (catcherScore < 280)
+            if (catcherScore < 300)
             {
                 soundLowValue.Play();
             }
-            else if (catcherScore >= 280)
+            else if (catcherScore >= 300)
             {
                 soundHighValue.Play();
             }
