@@ -106,12 +106,12 @@ public class Ball : MonoBehaviour {
                 hitNumber++;
             }
 
-            if (hitNumber >= 5 && (Time.time - previousTime) < 2f)
+            if (hitNumber >= 4 && (Time.time - previousTime) < 2f)
             {
                 playCombo = true;                              // 5 hits in 2 seconds, play combo
                 hitNumber = 0;
             }
-            else if (hitNumber >= 5 && (Time.time - previousTime) >= 2f)
+            else if (hitNumber >= 4 && (Time.time - previousTime) >= 2f)
             {
                 playCombo = false;
                 hitNumber = 0;

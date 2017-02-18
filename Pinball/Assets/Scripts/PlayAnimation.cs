@@ -58,7 +58,7 @@ public class PlayAnimation : MonoBehaviour {
             if (col.gameObject.GetComponent<Ball>().playCombo == true && comboActive == false)      // 'Playcombo' detection
             {
                 col.gameObject.GetComponent<Ball>().celebrate.Play();                               // Play celebration sound
-                col.gameObject.GetComponent<Ball>().ballScore += 200;                               // Attach bonus points
+                col.gameObject.GetComponent<Ball>().ballScore += 150;                               // Attach bonus points
                 combo.SetActive(true);                                                              // Play celebration sprite
                 col.gameObject.GetComponent<Ball>().playCombo = false;                              // Refresh combo status
                 previousTime = Time.time;                                                           // Bug fixing: avoid continuous combos
