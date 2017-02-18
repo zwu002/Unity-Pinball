@@ -43,7 +43,7 @@ public class CatcherMove : MonoBehaviour {
 	
 	void Update () {
 
-        if (currentPlatformAndroid == false)
+        if (currentPlatformAndroid == true)
         {
             AccelerometerMove();
         }
