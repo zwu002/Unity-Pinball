@@ -13,6 +13,7 @@ public class Ball : MonoBehaviour {
 
     public float previousTime;
     public int hitNumber;
+    public float[] hitTime;
     public bool playCombo;
 
     //this variables are for calculating color changes as the score goes up
@@ -96,7 +97,40 @@ public class Ball : MonoBehaviour {
             ballScoref = ballScore - 0.1f;
             hitSound.Play();
 
-            if (hitNumber == 0)
+            hitNumber++;
+            int hitTimeIndex = 0;
+            if (hitNumber % 4 != 0)
+            {
+                hitTimeIndex = hitNumber % 4 - 1;
+            }
+            else if (hitNumber % 4 == 0)
+            {
+                hitTimeIndex = hitNumber % 4 + 3;
+            }
+
+            if (hitNumber <= 4)
+            {
+                hitTime[hitTimeIndex] = Time.time;
+                playCombo = false;
+            }
+            else if (hitNumber > 4)
+            {
+                if (Time.time - hitTime[hitTimeIndex] < 2)
+                {
+                    playCombo = true;
+                    hitNumber = 0;
+                } 
+                else
+                {
+                    hitTime[hitTimeIndex] = Time.time;
+                }
+            }
+
+
+
+
+         // old method of detecting combos
+         /*   if (hitNumber == 0)
             {
                 hitNumber++;                                    // start calculating combos
                 previousTime = Time.time;                       // start the timer for combos
@@ -116,7 +150,7 @@ public class Ball : MonoBehaviour {
                 playCombo = false;
                 hitNumber = 0;
             }
-
+            */
 
         }
         else if (col.gameObject.tag == "Bottom")

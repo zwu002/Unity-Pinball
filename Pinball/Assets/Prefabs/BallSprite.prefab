@@ -304,6 +304,11 @@ MonoBehaviour:
   ballScore: 0
   previousTime: 0
   hitNumber: 0
+  hitTime:
+  - 0
+  - 0
+  - 0
+  - 0
   playCombo: 0
   hitSound: {fileID: 8276844}
   celebrate: {fileID: 8278560}
