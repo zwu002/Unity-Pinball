@@ -58,30 +58,30 @@ public class Ball : MonoBehaviour {
         if (ballScore > 0 && ballScore <= 70) 
         {
             colorChangeIndex = ballScoref / 70f;
-            sr.color = Color.Lerp(new Vector4 (0, 0, 1, 1), new Vector4(0, 0.5f, 0.5f, 1), colorChangeIndex); // 0-70 pts, blue to dark green
+            sr.color = Color.Lerp(new Vector4 (0.176f, 0.474f, 0.569f, 1), new Vector4(0.207f, 0.702f, 0.475f, 1), colorChangeIndex); // 0-70 pts, blue to dark green
         }
 
         else if (ballScore > 70 && ballScore <= 140)
         {
             colorChangeIndex = (ballScoref - 70f) / 70f;
-            sr.color = Color.Lerp(new Vector4(0, 0.5f, 0.5f, 1), new Vector4(0, 0.65f, 0.15f, 1), colorChangeIndex); // 70 - 140 pts, dark green to green
+            sr.color = Color.Lerp(new Vector4(0.207f, 0.702f, 0.475f, 1), new Vector4(0.235f, 0.808f, 0.235f, 1), colorChangeIndex); // 70 - 140 pts, dark green to green
         }
 
-        else if (ballScore > 140 && ballScore <= 220)
+        else if (ballScore > 140 && ballScore <= 200)
         {
-            colorChangeIndex = (ballScoref - 140f) / 80f;
-            sr.color = Color.Lerp(new Vector4(0, 0.65f, 0.15f, 1), new Vector4(1f, 0.65f, 0.15f, 1), colorChangeIndex); // 140 - 220 pts, green to orange
+            colorChangeIndex = (ballScoref - 140f) / 60f;
+            sr.color = Color.Lerp(new Vector4(0.235f, 0.808f, 0.235f, 1), new Vector4(0.95f, 0.78f, 0.35f, 1), colorChangeIndex); // 140 - 220 pts, green to orange
         }
 
-        else if (ballScore > 220 && ballScore <= 300)
+        else if (ballScore > 200 && ballScore <= 300)
         {
-            colorChangeIndex = (ballScoref - 220f) / 80f;
-            sr.color = Color.Lerp(new Vector4(1, 0.65f, 0.15f, 1), new Vector4(1, 0.15f, 0.15f, 1), colorChangeIndex); // 220 - 300 pts, orange to red
+            colorChangeIndex = (ballScoref - 220f) / 100f;
+            sr.color = Color.Lerp(new Vector4(0.95f, 0.78f, 0.35f, 1), new Vector4(0.95f, 0.24f, 0.24f, 1), colorChangeIndex); // 220 - 300 pts, orange to red
         }
 
         else if (ballScore > 300)
         {
-            sr.color = Color.Lerp(Color.white, new Vector4(1, 0.15f, 0.15f, 1), Mathf.PingPong(Time.time * 2, 1)); // >300 pts, ball shines between red and white
+            sr.color = Color.Lerp(Color.white, new Vector4(0.95f, 0.24f, 0.24f, 1), Mathf.PingPong(Time.time * 2, 1)); // >300 pts, ball shines between red and white
         }
     }
 
