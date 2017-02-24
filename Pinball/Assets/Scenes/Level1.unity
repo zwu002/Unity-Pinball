@@ -405,7 +405,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0492c9f2b095d0443ab72e4ec4241872, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5204f307d77564f46a56f0eb681003f9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4256,7 +4256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9736207041b159f4885116dea67796c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  torqueForce: 1000
+  torqueForce: 1200
   tiltAngle: 40
   leftFlipper: {fileID: 896165264}
   rightFlipper: {fileID: 798442651}
