@@ -8,6 +8,7 @@ public class PlayAnimation : MonoBehaviour {
     public bool hitBall;
     int timer;
     public float previousTime;
+    bool playcombo;
     public GameObject uiManager;
 
     Animator buttonAnimator;
@@ -15,6 +16,7 @@ public class PlayAnimation : MonoBehaviour {
     void Start () {
         timer = 0;
         previousTime = 0;
+        playcombo = false;
         buttonAnimator = GetComponent<Animator>();
     }
 	
@@ -34,6 +36,11 @@ public class PlayAnimation : MonoBehaviour {
             timer = 0;
         }
 
+        if ((Time.time - previousTime) > 2 && playcombo == true)
+        {
+            combo.SetActive(false);
+            playcombo = false;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -49,6 +56,8 @@ public class PlayAnimation : MonoBehaviour {
                 combo.SetActive(true);                                                              // Play celebration sprite
                 col.gameObject.GetComponent<Ball>().playCombo = false;                              // Refresh combo status                                                              // Bug fixing: avoid continuous combos
                 uiManager.GetComponent<UIManager>().comboUpdate();
+                previousTime = Time.time;
+                playcombo = true;
             }
         }
     }
